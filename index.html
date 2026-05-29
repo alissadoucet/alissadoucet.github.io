@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Alissa Marie Doucet – PhD student in Evolutionary Biology & Entomology at the University of Chicago & Field Museum. Studying nocturnal insect evolution under global change.">
+<title>Alissa Marie Doucet | Evolutionary Biologist & Entomologist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sand: #E2CCBA;
+  --sand-light: #EDE3D8;
+  --sand-pale: #F5EFE6;
+  --warm-white: #FAF7F2;
+  --cream: #F5F0E8;
+  --tan: #C4AE98;
+  --tan-dark: #A8927A;
+  --bark: #6B5B4E;
+  --bark-light: #8B7B6E;
+  --bark-deep: #5A4A3E;
+  --dusty-rose: #CDA9A8;
+  --dusty-rose-light: #DEC0BF;
+  --dusty-rose-pale: #EDD6D5;
+  --mauve-brown: #B89A92;
+  --sage: #7E8B6F;
+  --sage-dark: #5C6B52;
+  --sage-muted: #A8B29E;
+  --sage-light: #C8CEBC;
+  --sage-olive: #8B9B70;
+  --sage-pale: #D8DDD0;
+  --forest: #4A5540;
+  --forest-light: #5E6B54;
+  --text-primary: #3A3530;
+  --text-secondary: #5E5650;
+  --text-light: #8A8078;
+  --border-subtle: rgba(107, 91, 78, 0.12);
+  --border-medium: rgba(107, 91, 78, 0.2);
+  --shadow-warm: rgba(107, 91, 78, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: var(--warm-white);
+  color: var(--text-primary);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ═══════ NAV ═══════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(250, 247, 242, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: box-shadow 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 1px 12px var(--shadow-warm); }
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links { display: flex; gap: 0.15rem; list-style: none; }
+
+.nav-links a {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.45rem 0.8rem;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--forest); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.menu-toggle span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--forest); margin: 5px 0; transition: 0.3s ease;
+}
+
+/* ═══════ HERO / ABOUT ═══════ */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 2rem 60px;
+}
+
+.hero-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hero-portrait {
+  width: 320px;
+  height: 320px;
+  background: var(--sand-light);
+  overflow: hidden;
+  position: relative;
+}
+.hero-portrait img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.placeholder-label {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem; color: var(--bark-light);
+  gap: 0.3rem; text-align: center; padding: 1rem;
+}
+.placeholder-label svg {
+  width: 24px; height: 24px;
+  stroke: var(--bark-light); fill: none;
+  stroke-width: 1.5; opacity: 0.5;
+}
+
+.hero-text h1 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(2rem, 3.8vw, 2.8rem);
+  font-weight: 500;
+  color: var(--forest);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.hero-role {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bark-light);
+  margin-bottom: 1.5rem;
+}
+
+.hero-text p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+  max-width: 500px;
+  line-height: 1.75;
+}
+
+.hero-text .personal-note {
+  font-style: italic;
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-top: 0.3rem;
+}
+
+.hero-cv-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.2rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--forest);
+  text-decoration: none;
+  border-bottom: 1px solid var(--sage-muted);
+  padding-bottom: 2px;
+  transition: border-color 0.3s ease;
+}
+.hero-cv-link:hover { border-color: var(--forest); }
+.hero-cv-link svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none; stroke-width: 2;
+}
+
+/* ═══════ PHOTO STRIP ═══════ */
+.photo-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+
+.strip-photo {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+}
+.strip-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.strip-photo:nth-child(1) { background: var(--sand-light); }
+.strip-photo:nth-child(2) { background: var(--dusty-rose-pale); }
+.strip-photo:nth-child(3) { background: var(--sage-pale); }
+.strip-photo:nth-child(4) { background: var(--mauve-brown); }
+.strip-photo:nth-child(4) .placeholder-label { color: rgba(255,255,255,0.7); }
+.strip-photo:nth-child(4) .placeholder-label svg { stroke: rgba(255,255,255,0.5); }
+
+/* ═══════ SECTIONS ═══════ */
+section {
+  padding: 5rem 2rem;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.section-inner { max-width: 900px; margin: 0 auto; }
+
+.section-header { margin-bottom: 3rem; }
+
+.section-header h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  font-weight: 500;
+  color: var(--forest);
+}
+
+.section-rule {
+  width: 40px; height: 1.5px;
+  background: var(--tan); margin-top: 0.8rem;
+}
+
+/* ═══════ RESEARCH ═══════ */
+#research { background: var(--warm-white); }
+
+.research-statement {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  max-width: 700px;
+  margin-bottom: 3rem;
+  line-height: 1.8;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-subtle);
+}
+
+.research-card {
+  background: var(--warm-white);
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  overflow: hidden;
+}
+
+.research-card-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.research-card-photo img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+}
+
+/* Tinted placeholder backgrounds per card */
+.research-card:nth-child(1) .research-card-photo { background: var(--sand-light); }
+.research-card:nth-child(2) .research-card-photo { background: var(--dusty-rose-pale); }
+.research-card:nth-child(3) .research-card-photo { background: var(--sage-pale); }
+.research-card:nth-child(4) .research-card-photo { background: var(--sand-light); }
+
+.research-card-body { padding: 1.5rem; }
+
+.research-card-body h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+
+.research-card-body p {
+  font-size: 0.87rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* ═══════ PUBLICATIONS ═══════ */
+#publications { background: var(--warm-white); }
+
+.pub-list { display: flex; flex-direction: column; }
+
+.pub-item {
+  padding: 1.4rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.pub-item:first-child { padding-top: 0; }
+
+.pub-year {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem; font-weight: 500;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--bark-light); margin-bottom: 0.4rem;
+  display: inline-flex; align-items: center; gap: 0.5rem;
+}
+
+.pub-badge {
+  font-size: 0.6rem; padding: 0.1rem 0.4rem;
+  background: var(--sand); color: var(--bark);
+}
+
+.pub-item p {
+  font-size: 0.9rem; color: var(--text-secondary); line-height: 1.65;
+}
+
+.pub-item .hl { font-weight: 600; color: var(--forest); }
+
+.pub-item a {
+  color: var(--sage-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--sage-muted);
+  text-underline-offset: 2px;
+}
+.pub-item a:hover { color: var(--forest); text-decoration-color: var(--forest); }
+
+/* ═══════ REFLECTIONS (BLOG) ═══════ */
+#reflections { background: var(--warm-white); }
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-subtle);
+}
+
+.blog-card {
+  background: var(--warm-white);
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+.blog-card:hover { opacity: 0.85; }
+
+.blog-card-photo {
+  width: 100%;
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+}
+.blog-card-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.blog-card:nth-child(1) .blog-card-photo { background: var(--sage-pale); }
+.blog-card:nth-child(2) .blog-card-photo { background: var(--dusty-rose-pale); }
+.blog-card:nth-child(3) .blog-card-photo { background: var(--sand-light); }
+
+.blog-card-body {
+  padding: 1.2rem 1.5rem;
+}
+
+.blog-card-date {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--bark-light);
+  margin-bottom: 0.3rem;
+}
+
+.blog-card-body h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.35;
+}
+
+.blog-coming-note {
+  text-align: center;
+  padding: 2.5rem;
+  border: 1px solid var(--border-subtle);
+}
+
+.blog-coming-note p {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ═══════ PHOTOS / GALLERY ═══════ */
+#photos { background: var(--warm-white); }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-subtle);
+  border: 1px solid var(--border-subtle);
+}
+
+.gallery-item {
+  aspect-ratio: 1;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+.gallery-item:hover img { transform: scale(1.03); }
+
+.gallery-item:nth-child(1) { background: var(--sand-light); }
+.gallery-item:nth-child(2) { background: var(--dusty-rose-pale); }
+.gallery-item:nth-child(3) { background: var(--sage-pale); }
+.gallery-item:nth-child(4) { background: var(--mauve-brown); }
+.gallery-item:nth-child(5) { background: var(--sand-light); }
+.gallery-item:nth-child(6) { background: var(--sage-pale); }
+
+.gallery-item:nth-child(4) .placeholder-label { color: rgba(255,255,255,0.7); }
+.gallery-item:nth-child(4) .placeholder-label svg { stroke: rgba(255,255,255,0.5); }
+
+.gallery-note {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* ═══════ CONTACT ═══════ */
+#contact { background: var(--warm-white); }
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.contact-text h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.4rem; color: var(--forest); margin-bottom: 0.8rem;
+}
+
+.contact-text > p {
+  font-size: 0.92rem; color: var(--text-secondary);
+  margin-bottom: 1.8rem; line-height: 1.75;
+}
+
+.contact-links { display: flex; flex-direction: column; gap: 0; }
+
+.contact-link {
+  display: flex; align-items: center; gap: 0.9rem;
+  text-decoration: none; color: var(--text-secondary);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem; letter-spacing: 0.02em;
+  transition: color 0.3s ease;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+.contact-link:first-child { border-top: 1px solid var(--border-subtle); }
+.contact-link:hover { color: var(--forest); }
+
+.contact-link svg {
+  width: 17px; height: 17px;
+  stroke: var(--bark-light); fill: none;
+  stroke-width: 1.5; flex-shrink: 0;
+  transition: stroke 0.3s ease;
+}
+.contact-link:hover svg { stroke: var(--forest); }
+.contact-link svg.filled { fill: var(--bark-light); stroke: none; }
+.contact-link:hover svg.filled { fill: var(--forest); }
+
+.contact-photo {
+  width: 100%; aspect-ratio: 1;
+  overflow: hidden; position: relative;
+}
+.contact-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.contact-photo { background: var(--sage-pale); }
+
+/* ═══════ FOOTER ═══════ */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  text-align: center; padding: 2rem;
+  background: var(--warm-white);
+}
+footer p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem; letter-spacing: 0.06em;
+  color: var(--text-light);
+}
+footer a { color: var(--bark-light); text-decoration: none; }
+footer a:hover { color: var(--forest); }
+
+/* ═══════ ANIMATIONS ═══════ */
+.fade-in {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.fade-in.d1 { transition-delay: 0.08s; }
+.fade-in.d2 { transition-delay: 0.16s; }
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: rgba(250, 247, 242, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 0.8rem 2rem 1.2rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .menu-toggle { display: block; }
+  .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .hero-portrait { width: 250px; height: 250px; justify-self: center; }
+  .research-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; }
+  .contact-photo { order: -1; max-width: 320px; }
+  .photo-strip { grid-template-columns: 1fr 1fr; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .blog-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .nav-inner { padding: 0 1.2rem; }
+  section { padding: 3.5rem 1.2rem; }
+  .hero { padding: 80px 1.2rem 40px; }
+  .hero-portrait { width: 200px; height: 200px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ NAVIGATION ═══════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#about" class="nav-brand">Alissa Marie Doucet</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about" class="active">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#reflections">Reflections</a></li>
+      <li><a href="#photos">Photos</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ═══════ ABOUT ═══════ -->
+<section class="hero" id="about">
+  <div class="hero-inner">
+    <div class="hero-portrait fade-in">
+      <!-- REPLACE: <img src="images/portrait.jpg" alt="Alissa Marie Doucet"> -->
+      <div class="placeholder-label">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M14.5 9a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/><path d="M17 19c0-3-2.2-5-5-5s-5 2-5 5"/></svg>
+        Portrait
+      </div>
+    </div>
+
+    <div class="hero-text">
+      <h1 class="fade-in">Alissa Marie Doucet</h1>
+      <div class="hero-role fade-in d1">Evolutionary Biologist &amp; Entomologist</div>
+      <p class="fade-in d1">
+        I am a PhD student in the Committee on Evolutionary Biology at the University of Chicago and the Field Museum of Natural History. I study the evolution of nocturnal insects under global change, with a special interest in nocturnal Lepidoptera.
+      </p>
+      <p class="fade-in d1">
+        I integrate fieldwork, museum collections, environmental DNA, automated camera traps, and deep learning to track changes in timing, range, and ecological interactions.
+      </p>
+      <p class="fade-in d2 personal-note">
+        Outside of research, I love spending time with my wife, Taylor, and two fur kids, Smudge and Hazel Rose, reading fantasy, trying new vegan foods, and adventuring with friends.
+      </p>
+
+      <a href="assets/Doucet_CV.pdf" class="hero-cv-link fade-in d2" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 18 15 15"/></svg>
+        Curriculum Vitae
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PHOTO STRIP ═══════ -->
+<div class="photo-strip">
+  <!-- REPLACE each: <img src="images/strip-1.jpg" alt="..."> and delete placeholder-label divs -->
+  <div class="strip-photo">
+    <div class="placeholder-label">
+      <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      Nature photo
+    </div>
+  </div>
+  <div class="strip-photo">
+    <div class="placeholder-label">
+      <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      Moth photo
+    </div>
+  </div>
+  <div class="strip-photo">
+    <div class="placeholder-label">
+      <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      Field site
+    </div>
+  </div>
+  <div class="strip-photo">
+    <div class="placeholder-label">
+      <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+      Insect macro
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ RESEARCH ═══════ -->
+<section id="research">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <h2>Research</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <p class="research-statement fade-in">
+      My dissertation, <em>Life After Dark on a Changing Planet</em>, examines how evolutionary history&mdash;both deep constraints and rapid adaptive responses&mdash;determines which moth species persist or decline under environmental change.
+    </p>
+
+    <div class="research-grid fade-in">
+      <div class="research-card">
+        <div class="research-card-photo">
+          <!-- REPLACE: <img src="images/research-macro.jpg" alt="Macroevolutionary patterns"> -->
+          <div class="placeholder-label">
+            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            e.g. iNaturalist map or range data
+          </div>
+        </div>
+        <div class="research-card-body">
+          <h3>Macroevolutionary Patterns</h3>
+          <p>Analyzing trait-mediated phenological, geographic, and voltinism shifts in North American moth species using iNaturalist occurrence records.</p>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-card-photo">
+          <!-- REPLACE: <img src="images/research-monitoring.jpg" alt="Multi-method monitoring"> -->
+          <div class="placeholder-label">
+            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            e.g. Mothbox camera trap setup
+          </div>
+        </div>
+        <div class="research-card-body">
+          <h3>Multi-Method Monitoring</h3>
+          <p>Integrating automated camera traps, environmental DNA (eDNA), deep learning, and museum collections to develop more complete approaches for surveying nocturnal Lepidoptera communities.</p>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-card-photo">
+          <!-- REPLACE: <img src="images/research-community.jpg" alt="Evolutionary community ecology"> -->
+          <div class="placeholder-label">
+            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            e.g. moth visiting flower at night
+          </div>
+        </div>
+        <div class="research-card-body">
+          <h3>Evolutionary Community Ecology</h3>
+          <p>Investigating how evolutionary history and traits organize temporal and floral niche partitioning within a nocturnal moth community.</p>
+        </div>
+      </div>
+
+      <div class="research-card">
+        <div class="research-card-photo">
+          <!-- REPLACE: <img src="images/research-rapid.jpg" alt="Rapid evolution"> -->
+          <div class="placeholder-label">
+            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            e.g. common garden or seasonal cue
+          </div>
+        </div>
+        <div class="research-card-body">
+          <h3>Rapid Evolution</h3>
+          <p>Testing whether contemporary moth populations show evidence of rapid evolutionary responses to shifting seasonal cues.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PUBLICATIONS ═══════ -->
+<section id="publications">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <h2>Publications</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="pub-list">
+      <div class="pub-item fade-in">
+        <div class="pub-year">2025 <span class="pub-badge">Preprint</span></div>
+        <p>Godtfredsen, E. B., P. CaraDonna, A. J. Foxx, J. A. Bain, B. J. Connolly, K. M. Dawdy, <span class="hl">A. M. Doucet</span>, J. L. Fitzgerald, G. E. Kirschke, J. E. Ogilvie, C. C. Rigby, J. P. Scholl, D. J. Sandacz, S. Rosa, A. C. Zink, and A. M. Iler. Meta-analyses reveal no clear demographic consequences of phenological change across taxa. <em>bioRxiv</em> 2025.10.29.685396.</p>
+      </div>
+
+      <div class="pub-item fade-in d1">
+        <div class="pub-year">2025</div>
+        <p><span class="hl">Doucet, A.M.</span>, Andika, I.P., &amp; Hernandez, J. Digest: Behavioral plasticity under nutritional stress in nursery web spiders ensures equal reproductive success. <em>Evolution</em> qpaf149.</p>
+      </div>
+
+      <div class="pub-item fade-in d2">
+        <div class="pub-year">2021</div>
+        <p>Lynch, L., Kangas, M., Ballut, N., <span class="hl">Doucet, A.M.</span>, Schoenecker, K., Johnson, P., Gharehaghaji, M., &amp; Minor, E. Changes in land use and land cover along an urban-rural gradient influence floral resource availability. <em>Current Landscape Ecology Reports</em>. <a href="https://doi.org/10.1007/s40823-021-00064-1" target="_blank" rel="noopener">doi:10.1007/s40823-021-00064-1</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ REFLECTIONS ═══════ -->
+<section id="reflections">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <h2>Reflections</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <!-- Example blog cards — replace with real posts over time -->
+    <!-- Each card links to a separate page, e.g. posts/my-first-post.html -->
+    <div class="blog-grid fade-in">
+      <a href="#" class="blog-card">
+        <div class="blog-card-photo">
+          <div class="placeholder-label">
+            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Post photo
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Coming Soon</div>
+          <h3>First post title here</h3>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-photo">
+          <div class="placeholder-label">
+            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Post photo
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Coming Soon</div>
+          <h3>Second post title here</h3>
+        </div>
+      </a>
+      <a href="#" class="blog-card">
+        <div class="blog-card-photo">
+          <div class="placeholder-label">
+            <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+            Post photo
+          </div>
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-date">Coming Soon</div>
+          <h3>Third post title here</h3>
+        </div>
+      </a>
+    </div>
+
+    <div class="blog-coming-note fade-in" style="margin-top: 1.5rem;">
+      <p>Posts on fieldwork, science communication, outreach, and PhD life coming soon.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ PHOTOS ═══════ -->
+<section id="photos">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <h2>Photos</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="gallery-grid fade-in">
+      <!-- REPLACE each with: <img src="images/gallery-1.jpg" alt="..."> -->
+      <div class="gallery-item">
+        <div class="placeholder-label">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <div class="placeholder-label">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="gallery-note fade-in">
+      Gallery growing — more photos coming soon.
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ CONTACT ═══════ -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-header fade-in">
+      <h2>Contact</h2>
+      <div class="section-rule"></div>
+    </div>
+
+    <div class="contact-layout">
+      <div class="contact-text fade-in">
+        <h3>Let's Connect</h3>
+        <p>I'm always excited to connect&mdash;whether it's about insects, ecology and evolution, science communication, ethics in research, or something I haven't thought of yet. If you're a fellow researcher, a future STEM student, or just curious about the natural world, please reach out.</p>
+
+        <div class="contact-links">
+          <!-- Email -->
+          <a href="mailto:alissadoucet@uchicago.edu" class="contact-link">
+            <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22 4 12 13 2 4"/></svg>
+            alissadoucet@uchicago.edu
+          </a>
+
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/alissadoucet/" target="_blank" rel="noopener" class="contact-link">
+            <svg viewBox="0 0 24 24" class="filled"><path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+            LinkedIn
+          </a>
+
+          <!-- Google Scholar -->
+          <a href="https://scholar.google.com/citations?user=3wvmfoMAAAAJ&hl=en&authuser=1" target="_blank" rel="noopener" class="contact-link">
+            <svg viewBox="0 0 24 24" class="filled"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-2a5 5 0 1 0 0-10 5 5 0 0 0 0 10z"/><path d="M1 10L12 1l11 9"/></svg>
+            Google Scholar
+          </a>
+
+          <!-- ResearchGate -->
+          <a href="https://www.researchgate.net/profile/Alissa-Doucet-2" target="_blank" rel="noopener" class="contact-link">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke-width="1.5"/><text x="12" y="16" text-anchor="middle" font-size="11" font-weight="700" fill="var(--bark-light)" stroke="none" font-family="sans-serif">R</text></svg>
+            ResearchGate
+          </a>
+
+          <!-- GitHub -->
+          <a href="https://github.com/alissadoucet" target="_blank" rel="noopener" class="contact-link">
+            <svg viewBox="0 0 24 24" class="filled"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+            GitHub
+          </a>
+
+          <!-- UChicago CEB -->
+          <a href="https://evbio.uchicago.edu/admin/person/alissa-doucet" target="_blank" rel="noopener" class="contact-link">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            UChicago CEB Profile
+          </a>
+
+          <!-- Warren Woods -->
+          <a href="https://warrenwoods.bsd.uchicago.edu/research/" target="_blank" rel="noopener" class="contact-link">
+            <svg viewBox="0 0 24 24"><path d="M17 8C17 5.24 14.76 3 12 3S7 5.24 7 8c0 3 5 9 5 9s5-6 5-9z"/><path d="M12 22c-5 0-8-2.5-8-5 0-1.5 1-2.8 2.5-3.7"/><path d="M19.5 13.3C21 14.2 22 15.5 22 17c0 2.5-3 5-8 5"/><circle cx="12" cy="8" r="1.5"/></svg>
+            Warren Woods Field Station
+          </a>
+
+          <!-- Lab -->
+          <a href="https://in-flo-lab.group/people" target="_blank" rel="noopener" class="contact-link">
+            <svg viewBox="0 0 24 24"><path d="M9 3h6v5l4 7H5l4-7V3z"/><rect x="4" y="15" width="16" height="6" rx="1"/><line x1="9" y1="3" x2="15" y2="3"/></svg>
+            in-flo Lab
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-photo fade-in d1">
+        <!-- REPLACE: <img src="images/contact-photo.jpg" alt="Field photo"> -->
+        <div class="placeholder-label">
+          <svg viewBox="0 0 24 24"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
+          Field or nature photo
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════ FOOTER ═══════ -->
+<footer>
+  <p>&copy; 2026 Alissa Marie Doucet &nbsp;&middot;&nbsp; University of Chicago &nbsp;&middot;&nbsp; <a href="mailto:alissadoucet@uchicago.edu">alissadoucet@uchicago.edu</a></p>
+</footer>
+
+<script>
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+
+const sections = document.querySelectorAll('section');
+const anchors = navLinks.querySelectorAll('a');
+function updateActive() {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+  anchors.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
+}
+window.addEventListener('scroll', updateActive);
+
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+
+</body>
+</html>
