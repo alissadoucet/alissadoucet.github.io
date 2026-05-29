@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ═══════ EDIT THESE THREE LINES FOR EACH POST ═══════ -->
+<title>Your Post Title Here | Alissa Marie Doucet</title>
+<meta name="description" content="A brief one-sentence summary of this post for search engines and social media previews.">
+<!-- ═══════════════════════════════════════════════════════ -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sand: #E2CCBA;
+  --sand-light: #EDE3D8;
+  --sand-pale: #F5EFE6;
+  --warm-white: #FAF7F2;
+  --cream: #F5F0E8;
+  --tan: #C4AE98;
+  --tan-dark: #A8927A;
+  --bark: #6B5B4E;
+  --bark-light: #8B7B6E;
+  --bark-deep: #5A4A3E;
+  --dusty-rose: #CDA9A8;
+  --dusty-rose-pale: #EDD6D5;
+  --sage: #7E8B6F;
+  --sage-dark: #5C6B52;
+  --sage-muted: #A8B29E;
+  --sage-light: #C8CEBC;
+  --sage-pale: #D8DDD0;
+  --forest: #4A5540;
+  --text-primary: #3A3530;
+  --text-secondary: #5E5650;
+  --text-light: #8A8078;
+  --border-subtle: rgba(107, 91, 78, 0.12);
+  --shadow-warm: rgba(107, 91, 78, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Lora', Georgia, serif;
+  background: var(--warm-white);
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* ═══════ NAV ═══════ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(250, 247, 242, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  transition: box-shadow 0.3s ease;
+}
+nav.scrolled { box-shadow: 0 1px 12px var(--shadow-warm); }
+
+.nav-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.nav-brand {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--forest);
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.nav-links { display: flex; gap: 0.15rem; list-style: none; }
+
+.nav-links a {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.45rem 0.8rem;
+  transition: color 0.3s ease;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--forest); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.menu-toggle span {
+  display: block; width: 20px; height: 1.5px;
+  background: var(--forest); margin: 5px 0; transition: 0.3s ease;
+}
+
+/* ═══════ POST LAYOUT ═══════ */
+.post-hero {
+  width: 100%;
+  max-height: 480px;
+  overflow: hidden;
+  margin-top: 64px;
+  background: var(--sand-light);
+}
+.post-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-height: 480px;
+}
+
+.post-container {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3rem 2rem 5rem;
+}
+
+.post-meta {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.post-date {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bark-light);
+  margin-bottom: 0.6rem;
+}
+
+.post-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  font-weight: 500;
+  color: var(--forest);
+  line-height: 1.25;
+}
+
+/* ═══════ POST CONTENT ═══════ */
+.post-content h2 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-top: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.post-content h3 {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+
+.post-content p {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.2rem;
+  line-height: 1.85;
+}
+
+.post-content a {
+  color: var(--sage-dark);
+  text-decoration: underline;
+  text-decoration-color: var(--sage-muted);
+  text-underline-offset: 3px;
+  transition: color 0.3s ease;
+}
+.post-content a:hover {
+  color: var(--forest);
+  text-decoration-color: var(--forest);
+}
+
+.post-content blockquote {
+  border-left: 3px solid var(--tan);
+  padding: 0.8rem 1.5rem;
+  margin: 1.5rem 0;
+  background: var(--sand-pale);
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.post-content ul, .post-content ol {
+  margin: 1rem 0 1.2rem 1.5rem;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+.post-content li { margin-bottom: 0.4rem; }
+
+.post-content img {
+  width: 100%;
+  margin: 1.5rem 0;
+  display: block;
+}
+
+.post-content .caption {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  color: var(--text-light);
+  text-align: center;
+  margin-top: -1rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.post-content em { color: var(--text-primary); }
+
+.post-content strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* ═══════ BACK LINK ═══════ */
+.post-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--bark-light);
+  text-decoration: none;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-subtle);
+  transition: color 0.3s ease;
+}
+.post-back:hover { color: var(--forest); }
+.post-back svg {
+  width: 14px; height: 14px;
+  stroke: currentColor; fill: none; stroke-width: 2;
+}
+
+/* ═══════ FOOTER ═══════ */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  text-align: center; padding: 2rem;
+  background: var(--warm-white);
+}
+footer p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem; letter-spacing: 0.06em;
+  color: var(--text-light);
+}
+footer a { color: var(--bark-light); text-decoration: none; }
+footer a:hover { color: var(--forest); }
+
+/* ═══════ RESPONSIVE ═══════ */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: rgba(250, 247, 242, 0.98);
+    backdrop-filter: blur(16px);
+    padding: 0.8rem 2rem 1.2rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .menu-toggle { display: block; }
+  .post-container { padding: 2rem 1.2rem 4rem; }
+  .post-hero { max-height: 320px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════ NAVIGATION (same as main site) ═══════ -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <!-- NOTE: links point to ../ because posts live in the /posts/ folder -->
+    <a href="../index.html#about" class="nav-brand">Alissa Marie Doucet</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="../index.html#about">About</a></li>
+      <li><a href="../index.html#research">Research</a></li>
+      <li><a href="../index.html#publications">Publications</a></li>
+      <li><a href="../index.html#reflections" class="active">Reflections</a></li>
+      <li><a href="../index.html#photos">Photos</a></li>
+      <li><a href="../index.html#contact">Contact</a></li>
+    </ul>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     EDIT YOUR POST BELOW
+     ═══════════════════════════════════════════════════════ -->
+
+
+<!-- HERO IMAGE (optional — delete this whole div if no hero image) -->
+<!-- Replace src with your image path, e.g. ../images/post-my-trip.jpg -->
+<div class="post-hero">
+  <img src="../images/post-hero-placeholder.jpg" alt="Describe your image here">
+</div>
+
+
+<article class="post-container">
+
+  <!-- POST HEADER — edit the date and title -->
+  <div class="post-meta">
+    <div class="post-date">June 15, 2026</div>
+    <h1 class="post-title">Your Post Title Goes Here</h1>
+  </div>
+
+  <!-- POST BODY — write your content here using normal HTML -->
+  <div class="post-content">
+
+    <p>
+      Start writing your post here. This is a regular paragraph. You can write
+      as much or as little as you want. The styling will handle the rest.
+    </p>
+
+    <p>
+      To make text <strong>bold</strong> wrap it in &lt;strong&gt; tags.
+      For <em>italics</em> use &lt;em&gt; tags. For a
+      <a href="https://example.com">link</a>, use an &lt;a&gt; tag.
+    </p>
+
+    <h2>Section Heading</h2>
+
+    <p>
+      Use &lt;h2&gt; for major section breaks within your post, and &lt;h3&gt;
+      for smaller sub-sections. Don't worry about fonts or colors — the
+      stylesheet handles everything.
+    </p>
+
+    <!-- To add a photo inside the post: -->
+    <img src="../images/example-inline-photo.jpg" alt="Describe the image">
+    <p class="caption">Photo caption goes here — location, date, species, etc.</p>
+
+    <h3>Sub-Section Heading</h3>
+
+    <p>
+      Here's a smaller heading for organizing longer posts.
+    </p>
+
+    <!-- For a quote or highlighted passage: -->
+    <blockquote>
+      This is a blockquote — good for quotes, field journal excerpts,
+      or text you want to set apart visually.
+    </blockquote>
+
+    <p>
+      And here's a list if you need one:
+    </p>
+
+    <ul>
+      <li>First item in a list</li>
+      <li>Second item</li>
+      <li>Third item</li>
+    </ul>
+
+    <p>
+      That's it! Delete all of this example content and replace with your own.
+      Save the file with a short descriptive name like
+      <code>warren-woods-june-2026.html</code> and upload it to the
+      <code>posts/</code> folder in your GitHub repo.
+    </p>
+
+  </div>
+
+  <!-- BACK LINK — takes the reader back to the Reflections section -->
+  <a href="../index.html#reflections" class="post-back">
+    <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+    Back to Reflections
+  </a>
+
+</article>
+
+
+<!-- ═══════════════════════════════════════════════════════
+     END OF EDITABLE AREA
+     ═══════════════════════════════════════════════════════ -->
+
+
+<footer>
+  <p>&copy; 2026 Alissa Marie Doucet &nbsp;&middot;&nbsp; University of Chicago &nbsp;&middot;&nbsp; <a href="mailto:alissadoucet@uchicago.edu">alissadoucet@uchicago.edu</a></p>
+</footer>
+
+<script>
+const nav = document.getElementById('navbar');
+window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 20));
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+menuToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(l => l.addEventListener('click', () => navLinks.classList.remove('open')));
+</script>
+
+</body>
+</html>
